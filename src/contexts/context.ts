@@ -1,18 +1,26 @@
 import { createContext } from 'react'
+import { UserType } from '../types/user'
 
-export interface ContextType {
-  id: string
-  IsLogin: boolean
-}
-
-export const ContextValue = {
+export const ContextValue: UserType = {
   id: '',
+  email: '',
+  firstname: '',
+  lastname: '',
+  thai_id: '',
+  phone: '',
+  gender: '',
+  birthday: new Date(),
+  address: '',
+  subdistrist: '',
+  district: '',
+  province: '',
+  postcode: '',
   IsLogin: false,
 }
 
 interface ContextValueI {
-  authContext: ContextType
-  setAuthContext: (value: ContextType) => void
+  authContext: UserType
+  setAuthContext: (value: UserType) => void
 }
 
 export const AuthContext = createContext<ContextValueI | null>(null)
