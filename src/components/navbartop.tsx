@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { useLocation } from 'react-router-dom'
-import { NavbarTopData } from "../contents/NavbarTop"
+import { NavbarTopData } from '../contents/NavbarTop'
 
 export const NavbarTop = () => {
   const location = useLocation()
@@ -11,7 +11,7 @@ export const NavbarTop = () => {
         <Box sx={{ borderBottom: 1, marginX: '1em' }}>
           <h1>
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            {NavbarTopData.find((element) => element.path == location.pathname)?.title}
+              {NavbarTopData.find((element) => element.path == location.pathname)?.title}
             </Typography>
           </h1>
         </Box>
