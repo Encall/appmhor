@@ -5,11 +5,11 @@ import SignUpPage from './pages/signup'
 import { Home } from './pages/home'
 import { MyHealth } from './pages/myHealth'
 import Map from './pages/map'
-// import { NavbarTop } from './components/navbartop'
 import { Profile } from './pages/profile'
 import React, { useCallback, useEffect, useState } from 'react'
 import { AuthContext, ContextValue, ContextType } from './contexts/context'
 import { AxiosLib } from './lib/Axios'
+import { Protect } from './lib/protect'
 
 const App: React.FC = () => {
   const [authContext, setAuthContext] = useState<ContextType>(ContextValue)
@@ -41,19 +41,18 @@ const App: React.FC = () => {
         contrastText: '#fff',
       },
     },
-  });
+  })
 
   return (
     <AuthContext.Provider value={{ authContext, setAuthContext }}>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-          {/* <NavbarTop /> */}
             <Navbar />
             <Routes>
               <Route path="/signup" element={<SignUpPage />} />
               <Route path="/myHealth" element={<MyHealth />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />
               <Route path="/" element={<Home />} />
             </Routes>
