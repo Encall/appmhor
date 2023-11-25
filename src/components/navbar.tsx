@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
-import InfoIcon from '@mui/icons-material/Info'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import SearchIcon from '@mui/icons-material/Search'
+import PersonIcon from '@mui/icons-material/Person'
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety'
 
 export const Navbar = () => {
   const [value, setValue] = useState(0)
 
   return (
-    <Paper className='z-50' sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+    <Paper className="z-50 bg-[#FCFCFC]" sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
       <BottomNavigation
         showLabels
         value={value}
@@ -17,15 +17,9 @@ export const Navbar = () => {
           setValue(newValue)
         }}
       >
-        <BottomNavigationAction component={Link} to="/" label="Seek" value="Seek" icon={<LocalHospitalIcon />} />
-        <BottomNavigationAction component={Link} to="/todo" label="Todo" value="Todo" icon={<CheckCircleIcon />} />
-        <BottomNavigationAction
-          component={Link}
-          to="/myhealth"
-          label="My Health"
-          value="My Health"
-          icon={<InfoIcon />}
-        />
+        <BottomNavigationAction component={Link} to="/" value="Seek" icon={<SearchIcon />} />
+        <BottomNavigationAction component={Link} to="/todo" value="Todo" icon={<HealthAndSafetyIcon />} />
+        <BottomNavigationAction component={Link} to="/myhealth" value="My Health" icon={<PersonIcon />} />
       </BottomNavigation>
     </Paper>
   )
