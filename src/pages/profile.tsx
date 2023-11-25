@@ -6,6 +6,7 @@ import { AxiosLib } from '../lib/Axios'
 
 export const Profile = () => {
   const [user, setUser] = useState<{
+    email: string
     firstname: string
     lastname: string
     thai_id: string
@@ -18,6 +19,7 @@ export const Profile = () => {
     province: string
     postcode: string
   }>({
+    email: '',
     firstname: '',
     lastname: '',
     thai_id: '',
@@ -73,25 +75,19 @@ export const Profile = () => {
         </CardContent>
         <CardContent>
           <div className="my-3">
-            <TextField variant="outlined" label="เพศ" fullWidth disabled defaultValue={user.gender} />
+            <TextField variant="outlined" label="เพศ" fullWidth disabled value={user.gender} />
           </div>
           <div className="my-3">
-            <TextField variant="outlined" label="อีเมล" fullWidth defaultValue={user.gender} />
+            <TextField variant="outlined" label="อีเมล" fullWidth value={user.email} />
           </div>
           <div className="my-3">
-            <TextField variant="outlined" label="เบอร์โทรศัพท์" fullWidth disabled defaultValue={user.phone} />
+            <TextField variant="outlined" label="เบอร์โทรศัพท์" fullWidth disabled value={user.phone} />
           </div>
           <div className="my-3">
-            <TextField variant="outlined" label="กรุ๊ปเลือด" fullWidth defaultValue="B" />
+            <TextField variant="outlined" label="กรุ๊ปเลือด" fullWidth value="B" />
           </div>
           <div className="my-3">
-            <TextField
-              variant="outlined"
-              label="วันเดือนปีเกิด"
-              fullWidth
-              disabled
-              defaultValue={user.birthday.toString()}
-            />
+            <TextField variant="outlined" label="วันเดือนปีเกิด" fullWidth disabled value={user.birthday.toString()} />
           </div>
           <div className="my-3">
             <TextField
@@ -99,7 +95,7 @@ export const Profile = () => {
               variant="outlined"
               label="ที่อยู่"
               fullWidth
-              defaultValue={
+              value={
                 user.address + ' ' + user.subdistrist + ' ' + user.district + ' ' + user.province + ' ' + user.postcode
               }
             />
