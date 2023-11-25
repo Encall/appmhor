@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material/styles'
 import { Navbar } from './components/navbar'
 import SignUpPage from './pages/signup'
-import { Home } from './pages/home'
 import { MyHealth } from './pages/myHealth'
 import { MedicalRight } from './pages/medicalRight'
 import Map from './pages/map'
@@ -14,6 +13,7 @@ import { Protect } from './lib/protect'
 import Checklist from './pages/checklist'
 
 const App: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true)
   const [authContext, setAuthContext] = useState(ContextValue)
 
   const handleLogin = useCallback(async () => {
@@ -30,8 +30,10 @@ const App: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    handleLogin().then(() => console.log('success'))
+    handleLogin().then(() => setLoading(false))
   }, [handleLogin])
+
+  if (loading) return <>Loading</>
 
   const theme = createTheme({
     typography: {
@@ -58,7 +60,7 @@ const App: React.FC = () => {
               <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />
               <Route path="/checklist" element={<Checklist />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Map />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>
