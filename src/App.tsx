@@ -35,7 +35,13 @@ const App: React.FC = () => {
     typography: {
       fontFamily: ['Prompt'].join(','),
     },
-  })
+    palette: {
+      primary: {
+        main: '#6AA6FF',
+        contrastText: '#fff',
+      },
+    },
+  });
 
   return (
     <AuthContext.Provider value={{ authContext, setAuthContext }}>

@@ -160,12 +160,12 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
             <LockOutlined />
           </Avatar>
           <Typography component="h1" variant="h5">
             {step === 1
-              ? 'Sign up'
+              ? 'ลงทะเบียน'
               : step === 2
                 ? 'OTP'
                 : step === 3
@@ -178,22 +178,25 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate sx={{ mt: 3 }}>
             {step === 1 && (
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    autoComplete="phone-number"
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-                      setData({ ...data, phone: e.target.value })
-                    }}
-                    name="phonenumber"
-                    required
-                    fullWidth
-                    id="phonenumber"
-                    label="เบอร์โทรศัพท์"
-                    autoFocus
-                  />
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" component="div">
+                      กรุณากรอกหมายเลขโทรศัพท์เพื่อรับ OTP
+                    </Typography>
+                    <TextField
+                      autoComplete="phone-number"
+                      onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                        setData({ ...data, phone: e.target.value })
+                      }}
+                      name="phonenumber"
+                      required
+                      fullWidth
+                      id="phonenumber"
+                      label="เบอร์โทรศัพท์"
+                      autoFocus
+                    />
+                  </Grid>
                 </Grid>
-              </Grid>
             )}
             {step === 2 && (
               <Grid container spacing={2}>
