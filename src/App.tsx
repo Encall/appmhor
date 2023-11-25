@@ -4,7 +4,8 @@ import { Navbar } from './components/navbar'
 import SignUpPage from './pages/signup'
 import { Home } from './pages/home'
 import { MyHealth } from './pages/myHealth'
-import { NavbarTop } from './components/navbartop'
+import Map from './pages/map'
+// import { NavbarTop } from './components/navbartop'
 import { Profile } from './pages/profile'
 import React, { useCallback, useEffect, useState } from 'react'
 import { AuthContext, ContextValue, ContextType } from './contexts/context'
@@ -41,12 +42,13 @@ const App: React.FC = () => {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-            <NavbarTop />
+          {/* <NavbarTop /> */}
             <Navbar />
             <Routes>
               <Route path="/signup" element={<SignUpPage />} />
               <Route path="/myHealth" element={<MyHealth />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/map" element={<Map />} />
               <Route path="/" element={<Home />} />
             </Routes>
           </BrowserRouter>

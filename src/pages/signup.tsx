@@ -1,29 +1,27 @@
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
-import TextField from '@mui/material/TextField'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-import { MuiOtpInput } from 'mui-one-time-password-input'
-import { LocalizationProvider } from '@mui/x-date-pickers'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { DatePicker } from '@mui/x-date-pickers'
-import ToggleButton from '@mui/material/ToggleButton'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import CircularProgress from '@mui/material/CircularProgress'
-import { Navigate } from 'react-router-dom'
-import { useEffect } from 'react'
-import KeyboardIcon from '@mui/icons-material/Keyboard'
-import Alert from '@mui/material/Alert'
-
-import React, { useState } from 'react'
-import WebcamCapture from '../components/webcam'
+import { useState, useEffect } from "react";
+import {
+    Avatar,
+    Button,
+    CssBaseline,
+    TextField,
+    FormControlLabel,
+    Checkbox,
+    Grid,
+    Box,
+    Typography,
+    Container,
+    ToggleButton,
+    ToggleButtonGroup,
+    CircularProgress,
+    Alert,
+} from "@mui/material";
+import {LockOutlined,CheckCircleOutline} from "@mui/icons-material";
+import { MuiOtpInput } from "mui-one-time-password-input";
+import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Navigate } from "react-router-dom";
+import KeyboardIcon from "@mui/icons-material/Keyboard";
+import WebcamCapture from "../components/webcam";
 
 export default function SignUp() {
   const [otp, setOtp] = useState('')
@@ -117,8 +115,8 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <LockOutlined />
           </Avatar>
           <Typography component="h1" variant="h5">
             {step === 1
@@ -168,8 +166,8 @@ export default function SignUp() {
                         <Box sx={{ ml: 1 }}>Resending OTP...</Box>
                       </Box>
                     ) : isSent ? (
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <CheckCircleOutlineIcon />
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <CheckCircleOutline />
                         <Box sx={{ ml: 1 }}>OTP Sent!</Box>
                       </Box>
                     ) : (
