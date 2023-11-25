@@ -1,19 +1,23 @@
 export interface NavbarTopType {
-    title: string;
-    path: string;
+  title: string
+  path: string
 }
 
-export const NavbarTopData: NavbarTopType[] = [{
+export const NavbarTopData: NavbarTopType[] = [
+  {
     title: 'Home',
-    path: '/'
-}, {
+    path: '/',
+  },
+  {
     title: 'My Health',
-    path: '/myhealth'
-}, {
+    path: '/myhealth',
+  },
+  {
     title: 'Todo',
-    path: '/todo'
-}, {
-    title: 'ข้อมูลส่วนตัว', 
-    path: '/profile'
-}
+    path: '/todo',
+  },
+  {
+    title: 'ข้อมูลส่วนตัว',
+    path: '/profile',
+  },
 ]
