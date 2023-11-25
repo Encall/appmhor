@@ -58,7 +58,7 @@ export const Profile: React.FC = () => {
               label="วันเดือนปีเกิด"
               fullWidth
               disabled
-              value={auth?.authContext.birthday.toString()}
+              value={auth?.authContext.birthday}
             />
           </div>
           <div className="my-3">
