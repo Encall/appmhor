@@ -90,7 +90,13 @@ export const Profile: React.FC = () => {
             <TextField variant="outlined" label="กรุ๊ปเลือด" fullWidth value="B" />
           </div>
           <div className="my-3">
-            <TextField variant="outlined" label="วันเดือนปีเกิด" fullWidth disabled value={user.birthday.toString()} />
+            <TextField
+              variant="outlined"
+              label="วันเดือนปีเกิด"
+              fullWidth
+              disabled
+              value={(user.birthday || new Date()).toString()}
+            />
           </div>
           <div className="my-3">
             <TextField
