@@ -1,8 +1,8 @@
-import { GoogleMap, Marker, useGoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api'
 import UseGeoLocation from '../hooks/useGeoLocation'
 import { useMemo, useRef, useCallback } from 'react'
 import { Card, CardContent, Typography, Button, CardActions, Box } from '@mui/material'
-import { LocationOn, CheckCircleOutline, PersonPin } from '@mui/icons-material'
+import { LocationOn, CheckCircleOutline } from '@mui/icons-material'
 
 type MapOptions = google.maps.MapOptions
 
