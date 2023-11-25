@@ -17,32 +17,86 @@ import { DatePicker } from '@mui/x-date-pickers'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import CircularProgress from '@mui/material/CircularProgress'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import KeyboardIcon from '@mui/icons-material/Keyboard'
 import Alert from '@mui/material/Alert'
 
 import React, { useState } from 'react'
 import WebcamCapture from '../components/webcam'
+import { AxiosLib } from '../lib/Axios'
 
 export default function SignUp() {
+  const navigate = useNavigate()
   const [otp, setOtp] = useState('')
   const [step, setStep] = useState(1)
   const [inputMethod, setInputMethod] = useState('ocr') // ["ocr", "manual"
   const [resendOTP, setResendOTP] = useState(false) // [true, false
   const [isSent, setIsSent] = useState(false) // [true, false
-  const [shouldNavigate, setShouldNavigate] = useState(false) // [true, false
   const [checked, setChecked] = useState(false) // [true, false
   const [showAlert, setShowAlert] = useState(false) // [true, false
+  const [data, setData] = useState<{
+    email: string
+    thai_id: string
+    phone: string
+    firstname: string
+    lastname: string
+    gender: string
+    birthday: Date
+    address: string
+    subdistrist: string
+    district: string
+    province: string
+    postcode: string
+  }>({
+    email: '',
+    thai_id: '',
+    phone: '',
+    firstname: '',
+    lastname: '',
+    gender: '',
+    birthday: new Date(),
+    address: '',
+    subdistrist: '',
+    district: '',
+    province: '',
+    postcode: '',
+  })
 
   const handleCheckBox = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked)
   }
 
+  const handleSubmitCreateUser = async () => {
+    try {
+      const result = await AxiosLib.post('/api/users', {
+        email: data.email,
+        thai_id: data.thai_id,
+        phone: data.phone,
+        firstname: data.firstname,
+        lastname: data.lastname,
+        gender: data.gender,
+        birthday: data.birthday,
+        address: data.address,
+        subdistrist: data.subdistrist,
+        district: data.district,
+        province: data.province,
+        postcode: data.postcode,
+      })
+
+      console.log(result)
+      if (result.status === 201) {
+        return navigate('/home')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     if (step === 5) {
       const timer = setTimeout(() => {
-        setShouldNavigate(true)
+        // setShouldNavigate(true)
       }, 2000)
 
       // Cleanup function to clear the timeout if the component unmounts before the timeout finishes
@@ -87,18 +141,9 @@ export default function SignUp() {
     }, 3000)
   }
 
-  if (shouldNavigate) {
-    return <Navigate to="/home" />
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    })
-  }
+  //   if (shouldNavigate) {
+  //     return <Navigate to="/home" />
+  //   }
 
   const handleChange = (newValue: string) => {
     setOtp(newValue)
@@ -133,12 +178,15 @@ export default function SignUp() {
                       : 'ข้อมูลส่วนตัว'
                     : 'ลงทะเบียนเสร็จสมบูรณ์'}
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate sx={{ mt: 3 }}>
             {step === 1 && (
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     autoComplete="phone-number"
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, phone: e.target.value })
+                    }}
                     name="phonenumber"
                     required
                     fullWidth
@@ -221,23 +269,70 @@ export default function SignUp() {
             {step === 4 && inputMethod === 'manual' && (
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="firstname" name="firstname" required fullWidth id="firstname" label="ชื่อ" />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, firstname: e.target.value })
+                    }}
+                    autoComplete="firstname"
+                    name="firstname"
+                    required
+                    fullWidth
+                    id="firstname"
+                    label="ชื่อ"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="lastname" name="lastname" required fullWidth id="lastname" label="นามสกุล" />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, lastname: e.target.value })
+                    }}
+                    autoComplete="lastname"
+                    name="lastname"
+                    required
+                    fullWidth
+                    id="lastname"
+                    label="นามสกุล"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="email" name="email" fullWidth id="email" label="อีเมล" />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, email: e.target.value })
+                    }}
+                    autoComplete="email"
+                    name="email"
+                    fullWidth
+                    id="email"
+                    label="อีเมล"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="" name="thai_id" required fullWidth id="thai_id" label="รหัสบัตรประชาชน" />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, thai_id: e.target.value })
+                    }}
+                    autoComplete=""
+                    name="thai_id"
+                    required
+                    fullWidth
+                    id="thai_id"
+                    label="รหัสบัตรประชาชน"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <DatePicker disableFuture label="วันเดือนปีเกิด *" className="w-full" />
+                  <DatePicker
+                    onChange={(newValue: any) => setData({ ...data, birthday: newValue })}
+                    disableFuture
+                    label="วันเดือนปีเกิด *"
+                    className="w-full"
+                  />
                 </Grid>
 
                 <Grid item xs={12} sm={6}>
                   <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, address: e.target.value })
+                    }}
                     autoComplete=""
                     name="address"
                     required
@@ -249,12 +344,48 @@ export default function SignUp() {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="" name="address" required id="address" label="แขวง/ตำบล" />
-                  <TextField autoComplete="" name="address" required id="address" label="เขต/อำเภอ" />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, subdistrist: e.target.value })
+                    }}
+                    autoComplete=""
+                    name="address"
+                    required
+                    id="address"
+                    label="แขวง/ตำบล"
+                  />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, district: e.target.value })
+                    }}
+                    autoComplete=""
+                    name="address"
+                    required
+                    id="address"
+                    label="เขต/อำเภอ"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField autoComplete="" name="address" required id="address" label="จังหวัด" />
-                  <TextField autoComplete="" name="address" required id="address" label="รหัสไปษณีย์" />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, province: e.target.value })
+                    }}
+                    autoComplete=""
+                    name="address"
+                    required
+                    id="address"
+                    label="จังหวัด"
+                  />
+                  <TextField
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, postcode: e.target.value })
+                    }}
+                    autoComplete=""
+                    name="address"
+                    required
+                    id="address"
+                    label="รหัสไปษณีย์"
+                  />
                 </Grid>
               </Grid>
             )}
@@ -275,9 +406,21 @@ export default function SignUp() {
             )}
             {step !== 5 && (
               <>
-                <Button type="button" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={nextStep}>
-                  ต่อไป
-                </Button>
+                {step === 4 ? (
+                  <Button
+                    type="button"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                    onClick={handleSubmitCreateUser}
+                  >
+                    ลงทะเบียน
+                  </Button>
+                ) : (
+                  <Button type="button" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={nextStep}>
+                    ต่อไป
+                  </Button>
+                )}
                 {step >= 3 && (
                   <Button type="button" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={prevStep}>
                     ย้อนกลับ
