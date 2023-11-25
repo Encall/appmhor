@@ -17,11 +17,11 @@ export const Navbar = () => {
           setValue(newValue)
         }}
       >
-        <BottomNavigationAction component={Link} to="/Seek" label="Seek" value="Seek" icon={<LocalHospitalIcon />} />
-        <BottomNavigationAction component={Link} to="/Todo" label="Todo" value="Todo" icon={<CheckCircleIcon />} />
+        <BottomNavigationAction component={Link} to="/" label="Seek" value="Seek" icon={<LocalHospitalIcon />} />
+        <BottomNavigationAction component={Link} to="/todo" label="Todo" value="Todo" icon={<CheckCircleIcon />} />
         <BottomNavigationAction
           component={Link}
-          to="/MyHealth"
+          to="/myhealth"
           label="My Health"
           value="My Health"
           icon={<InfoIcon />}

@@ -1,5 +1,5 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, Button, Grid, Stack, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 export const MyHealth = () => {
     return (
@@ -104,13 +104,34 @@ export const MyHealth = () => {
                                 </Stack>
                             </Stack>
                         </Box>
-
                     </Stack>
-
-
+            <Box sx={{ borderRadius: 2, border: 1, borderColor: '#61E5FF' }}>
+              <Stack direction="row" spacing={1}>
+                <Box
+                  sx={{
+                    borderRadius: 1,
+                    borderLeft: 4,
+                    borderColor: '#61E5FF',
+                    paddingY: '1px',
+                    display: 'block',
+                    paddingX: '5px',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <strong>25</strong> <br />
+                  June
                 </Box>
-            </div>
-        </div>
-
-    );
+                <Stack direction="column" spacing={0.25}>
+                  <Box sx={{ paddingX: '10px' }}>
+                    Visit <strong> Dr. Wongsatorn Sungsil</strong>
+                  </Box>
+                  <Box sx={{ paddingX: '10px' }}>15.00 - 16.00</Box>
+                </Stack>
+              </Stack>
+            </Box>
+          </Stack>
+        </Box>
+      </div>
+    </div>
+  )
 }
