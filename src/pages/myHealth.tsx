@@ -44,7 +44,7 @@ export const MyHealth = () => {
                             backgroundRepeat: 'no-repeat',
 
                         }}>
-                            <Link to="/asd">
+                            <Link to="/medicalRight">
                                 <Typography variant='h6' sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }} >สิทธิการรักษาพยาบาล</Typography>
                             </Link>
                         </Box>
