@@ -1,20 +1,39 @@
 import { Typography, Avatar, TextField, Button } from '@mui/material'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import React, { useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AxiosLib } from '../lib/Axios'
-import { AuthContext } from '../contexts/context'
+import { UserType } from '../types/user'
+import { useNavigate } from 'react-router-dom'
 
 export const Profile: React.FC = () => {
-  const auth = useContext(AuthContext)
+  const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+  const [user, setUser] = useState<UserType>({
+    id: '',
+    email: '',
+    firstname: '',
+    lastname: '',
+    thai_id: '',
+    phone: '',
+    gender: '',
+    birthday: new Date(),
+    address: '',
+    subdistrist: '',
+    district: '',
+    province: '',
+    postcode: '',
+    IsLogin: false,
+  })
+
   const HandleUpdate = async () => {
     try {
       const result = await AxiosLib.patch('/api/users', {
-        address: auth?.authContext.address,
-        subdistrist: auth?.authContext.subdistrist,
-        district: auth?.authContext.district,
-        province: auth?.authContext.province,
-        postcode: auth?.authContext.postcode,
+        address: user.address,
+        subdistrist: user.subdistrist,
+        district: user.district,
+        province: user.province,
+        postcode: user.postcode,
       })
 
       if (result.status === 200) {
@@ -25,6 +44,24 @@ export const Profile: React.FC = () => {
     }
   }
 
+  const getInfo = async () => {
+    try {
+      const result = await AxiosLib.get('/api/users/me')
+
+      if (result.status === 200) {
+        setUser({ ...result.data.data, IsLogin: true })
+      }
+    } catch (error) {
+      navigate(0)
+    }
+  }
+
+  useEffect(() => {
+    getInfo().then(() => setLoading(false))
+  }, [])
+
+  if (loading) return <>loading</>
+
   return (
     <>
       <Card sx={{ maxWidth: 360, margin: 'auto', boxShadow: 3, borderRadius: 2, marginBottom: 10 }}>
@@ -33,7 +70,7 @@ export const Profile: React.FC = () => {
         </CardContent>
         <CardContent>
           <Typography variant="h5" component="div" className="justify-center flex">
-            {auth?.authContext.firstname} {auth?.authContext.lastname}
+            {user.firstname} {user.lastname}
           </Typography>
           <Typography variant="subtitle1" component="div" className="justify-center flex">
             อายุ ปี
@@ -41,25 +78,19 @@ export const Profile: React.FC = () => {
         </CardContent>
         <CardContent>
           <div className="my-3">
-            <TextField variant="outlined" label="เพศ" fullWidth disabled value={auth?.authContext.gender} />
+            <TextField variant="outlined" label="เพศ" fullWidth disabled value={user.gender} />
           </div>
           <div className="my-3">
-            <TextField variant="outlined" label="อีเมล" fullWidth value={auth?.authContext.email} />
+            <TextField variant="outlined" label="อีเมล" fullWidth value={user.email} />
           </div>
           <div className="my-3">
-            <TextField variant="outlined" label="เบอร์โทรศัพท์" fullWidth disabled value={auth?.authContext.phone} />
+            <TextField variant="outlined" label="เบอร์โทรศัพท์" fullWidth disabled value={user.phone} />
           </div>
           <div className="my-3">
             <TextField variant="outlined" label="กรุ๊ปเลือด" fullWidth value="B" />
           </div>
           <div className="my-3">
-            <TextField
-              variant="outlined"
-              label="วันเดือนปีเกิด"
-              fullWidth
-              disabled
-              value={auth?.authContext.birthday}
-            />
+            <TextField variant="outlined" label="วันเดือนปีเกิด" fullWidth disabled value={user.birthday.toString()} />
           </div>
           <div className="my-3">
             <TextField
@@ -68,15 +99,7 @@ export const Profile: React.FC = () => {
               label="ที่อยู่"
               fullWidth
               value={
-                auth?.authContext.address +
-                ' ' +
-                auth?.authContext.subdistrist +
-                ' ' +
-                auth?.authContext.district +
-                ' ' +
-                auth?.authContext.province +
-                ' ' +
-                auth?.authContext.postcode
+                user.address + ' ' + user.subdistrist + ' ' + user.district + ' ' + user.province + ' ' + user.postcode
               }
             />
           </div>
