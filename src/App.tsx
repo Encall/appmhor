@@ -59,7 +59,7 @@ const App: React.FC = () => {
               <Route path="/myHealth" element={<MyHealth />} />
               <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />
-              <Route path="/checklist" element={<Checklist />} />
+              <Route path="/todo" element={<Checklist />} />
               <Route path="/" element={<Map />} />
             </Routes>
           </BrowserRouter>
