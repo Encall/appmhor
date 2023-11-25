@@ -1,28 +1,25 @@
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import React, { useState, useEffect } from "react";
+import {
+    Avatar,
+    Button,
+    CssBaseline,
+    TextField,
+    FormControlLabel,
+    Checkbox,
+    Grid,
+    Box,
+    Typography,
+    Container,
+    ToggleButton,
+    ToggleButtonGroup,
+    CircularProgress,
+    Alert,
+} from "@mui/material";
 import { MuiOtpInput } from "mui-one-time-password-input";
-import { LocalizationProvider } from "@mui/x-date-pickers";
+import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DatePicker } from "@mui/x-date-pickers";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import CircularProgress from "@mui/material/CircularProgress";
 import { Navigate } from "react-router-dom";
-import { useEffect } from "react";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
-import Alert from "@mui/material/Alert";
-
-import React, { useState } from "react";
 import WebcamCapture from "../components/webcam";
 
 export default function SignUp() {
