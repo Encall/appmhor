@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
+import Alert from "@mui/material/Alert";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -18,7 +18,9 @@ import { DatePicker } from "@mui/x-date-pickers";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import CircularProgress from "@mui/material/CircularProgress";
-import Alert from "@mui/material/Alert";
+import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import KeyboardIcon from "@mui/icons-material/Keyboard";
 
 import React, { useState } from "react";
 import WebcamCapture from "../components/webcam";
@@ -29,31 +31,68 @@ export default function SignUp() {
   const [inputMethod, setInputMethod] = useState("ocr"); // ["ocr", "manual"
   const [resendOTP, setResendOTP] = useState(false); // [true, false
   const [isSent, setIsSent] = useState(false); // [true, false
+  const [shouldNavigate, setShouldNavigate] = useState(false); // [true, false
+  const [checked, setChecked] = useState(false); // [true, false
+  const [showAlert, setShowAlert] = useState(false); // [true, false
+
+  const handleCheckBox = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
+
+  useEffect(() => {
+    if (step === 5) {
+      const timer = setTimeout(() => {
+        setShouldNavigate(true);
+      }, 2000);
+
+      // Cleanup function to clear the timeout if the component unmounts before the timeout finishes
+      return () => clearTimeout(timer);
+    }
+  }, [step]); // This effect runs whenever `step` changes
 
   const nextStep = () => {
-    setStep((prevStep) => prevStep + 1);
+    if (!checked && step === 3) {
+      setShowAlert(true);
+    } else {
+      setShowAlert(false);
+
+      setStep((prevStep) => prevStep + 1);
+    }
   };
 
   const prevStep = () => {
     setStep((prevStep) => prevStep - 1);
   };
 
+  const handleAlignment = (
+    event: React.MouseEvent<HTMLElement>,
+    inputMethod: string | null
+  ) => {
+    if (inputMethod !== null) {
+      setInputMethod(inputMethod);
+    }
+  };
+
   const handleResendOTP = () => {
     // Show loading state
     setResendOTP(true);
-  
+
     // Simulate OTP resend delay
     setTimeout(() => {
       // Hide loading state and show sent state
       setResendOTP(false);
       setIsSent(true);
-  
+
       // Reset to default state after another 3 seconds
       setTimeout(() => {
         setIsSent(false);
       }, 3000);
     }, 3000);
   };
+
+  if (shouldNavigate) {
+    return <Navigate to="/home" />;
+  }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -70,6 +109,11 @@ export default function SignUp() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
+      {showAlert && (
+        <Alert severity="warning">
+          Please check the checkbox before proceeding.
+        </Alert>
+      )}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -167,16 +211,48 @@ export default function SignUp() {
                     color="primary"
                     value={inputMethod}
                     exclusive
-                    onChange={(event, newValue) => setInputMethod(newValue)}
+                    onChange={handleAlignment}
                     fullWidth
                   >
-                    <ToggleButton value="ocr" aria-label="ocr">
+                    <ToggleButton
+                      value="ocr"
+                      aria-label="ocr"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                    >
                       Select OCR
+                      <img src="thai_id_card.png" width={100} />
                     </ToggleButton>
-                    <ToggleButton value="manual" aria-label="manual">
+                    <ToggleButton
+                      value="manual"
+                      aria-label="manual"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                    >
                       Manual Input
+                      <KeyboardIcon style={{ fontSize: "4em" }} />
                     </ToggleButton>
                   </ToggleButtonGroup>
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        required
+                        value="allowExtraEmails"
+                        color="primary"
+                        onChange={handleCheckBox}
+                      />
+                    }
+                    checked={checked}
+                    label="รับทราบ และยินยอมตามข้อตกลงการใช้งานและนโยบายความเป็นส่วนตัว"
+                  />
                 </Grid>
               </Grid>
             )}
@@ -222,8 +298,13 @@ export default function SignUp() {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <DatePicker disableFuture label="วันเดือนปีเกิด" />
+                  <DatePicker
+                    disableFuture
+                    label="วันเดือนปีเกิด *"
+                    className="w-full"
+                  />
                 </Grid>
+
                 <Grid item xs={12} sm={6}>
                   <TextField
                     autoComplete=""
