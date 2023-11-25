@@ -4,7 +4,6 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material/styles";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/navbar'
 import SignUpPage from "./pages/signup";
 import { Home } from "./pages/home";
@@ -23,6 +22,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
