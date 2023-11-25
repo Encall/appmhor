@@ -83,7 +83,8 @@ export const MyHealth = () => {
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat',
 
-                        }}>                            <Link to="/asd">
+                        }}>
+                            <Link to="/asd">
                                 <Typography variant='h6' sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }} >การนัดหมาย</Typography>
                             </Link>
                         </Box>
@@ -100,8 +101,8 @@ export const MyHealth = () => {
                                     <Typography variant='h6'>มิ.ย.</Typography>
                                 </Box>
                                 <Stack direction="column" spacing={0.25}>
-                                    <Box sx={{ paddingX: '0.5em'}}>
-                                        <Typography variant='h6' sx={{fontSize:'90%'}}>นัดพบ{" "}
+                                    <Box sx={{ paddingX: '0.5em' }}>
+                                        <Typography variant='h6' sx={{ fontSize: '90%' }}>นัดพบ{" "}
                                             <Box component="span" fontWeight="fontWeightBold">
                                                 น.พ. กิตติพงศ์ ตาปี
                                             </Box>
@@ -110,7 +111,7 @@ export const MyHealth = () => {
                                     </Box>
                                     <Stack direction="column">
                                         <Box sx={{ paddingX: '0.5em' }}>
-                                            <Typography variant='h6' sx={{fontSize:'90%'}}>15.00 - 16.00</Typography>
+                                            <Typography variant='h6' sx={{ fontSize: '90%' }}>15.00 - 16.00</Typography>
                                         </Box>
                                         <Box sx={{ paddingX: '0.5em' }}>
                                             <Typography variant='h6' sx={{ fontSize: '80%' }}>รพ. พระราม 2</Typography>
@@ -122,29 +123,7 @@ export const MyHealth = () => {
                         </Box>
                     </Stack>
                 </Box>
-                <Stack direction="column" spacing={0.25}>
-                  <Box sx={{ paddingX: '0.5em' }}>
-                    <Typography>
-                      Visit{' '}
-                      <Box component="span" fontWeight="fontWeightBold">
-                        Dr. Kittipong Tapy
-                      </Box>
-                    </Typography>
-                  </Box>
-                  <Stack direction="column">
-                    <Box sx={{ paddingX: '0.5em' }}>
-                      <Typography>15.00 - 16.00</Typography>
-                    </Box>
-                    <Box sx={{ paddingX: '0.5em' }}>
-                      <Typography sx={{ fontSize: '0.7em' }}>Phraram 2 Hospital</Typography>
-                    </Box>
-                  </Stack>
-                </Stack>
-              </Stack>
-            </Box>
-          </Stack>
-        </Box>
-      </div>
-    </div>
+            </div>
+        </div>
   )
 }
