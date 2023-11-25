@@ -5,24 +5,25 @@ import SignUpPage from './pages/signup'
 import { Home } from './pages/home'
 import { MyHealth } from './pages/myHealth'
 import Map from './pages/map'
-// import { NavbarTop } from './components/navbartop'
 import { Profile } from './pages/profile'
 import React, { useCallback, useEffect, useState } from 'react'
-import { AuthContext, ContextValue, ContextType } from './contexts/context'
+import { AuthContext, ContextValue } from './contexts/context'
 import { AxiosLib } from './lib/Axios'
+import { Protect } from './lib/protect'
+import Checklist from './pages/checklist'
 
 const App: React.FC = () => {
-  const [authContext, setAuthContext] = useState<ContextType>(ContextValue)
+  const [authContext, setAuthContext] = useState(ContextValue)
 
   const handleLogin = useCallback(async () => {
     try {
       const result = await AxiosLib.get('/api/users/me')
 
       if (result.status === 200) {
-        setAuthContext({ id: result.data.id, IsLogin: true })
+        setAuthContext({ ...result.data.data, IsLogin: true })
       }
     } catch (error) {
-      setAuthContext({ id: '', IsLogin: false })
+      setAuthContext({ ...authContext, IsLogin: false })
       console.log(error)
     }
   }, [])
@@ -35,6 +36,12 @@ const App: React.FC = () => {
     typography: {
       fontFamily: ['Prompt'].join(','),
     },
+    palette: {
+      primary: {
+        main: '#6AA6FF',
+        contrastText: '#fff',
+      },
+    },
   })
 
   return (
@@ -42,13 +49,13 @@ const App: React.FC = () => {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-            {/* <NavbarTop /> */}
             <Navbar />
             <Routes>
               <Route path="/signup" element={<SignUpPage />} />
               <Route path="/myHealth" element={<MyHealth />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />
+              <Route path="/checklist" element={<Checklist />} />
               <Route path="/" element={<Home />} />
             </Routes>
           </BrowserRouter>
