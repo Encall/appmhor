@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 import Button from "@mui/material/Button";
 
 const WebcamCapture = () => {
-  const webcamRef = useRef(null);
+  const webcamRef:any = useRef(null);
   const [imageSrc, setImageSrc] = useState(null);
 
   const capture = () => {

@@ -34,7 +34,6 @@ export default function SignUp() {
   const [shouldNavigate, setShouldNavigate] = useState(false); // [true, false
   const [checked, setChecked] = useState(false); // [true, false
   const [showAlert, setShowAlert] = useState(false); // [true, false
-  const [formValid, setFormValid] = useState(false); // [true, false
 
   const handleCheckBox = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
@@ -67,7 +66,7 @@ export default function SignUp() {
   };
 
   const handleAlignment = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     inputMethod: string | null
   ) => {
     if (inputMethod !== null) {
@@ -105,7 +104,7 @@ export default function SignUp() {
     });
   };
 
-  const handleChange = (newValue) => {
+  const handleChange = (newValue:any) => {
     setOtp(newValue);
   };
 
