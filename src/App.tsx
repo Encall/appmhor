@@ -7,6 +7,7 @@ import {
 import { Navbar } from './components/navbar'
 import SignUpPage from "./pages/signup";
 import { Home } from "./pages/home";
+import { MyHealth } from "./pages/myHealth";
 
 function App() {
   const theme = createTheme({
@@ -22,6 +23,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/myHealth" element={<MyHealth />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </BrowserRouter>
