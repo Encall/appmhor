@@ -54,7 +54,7 @@ export default function SignUp() {
   const nextStep = () => {
     if (!checked && step === 3) {
       setShowAlert(true);
-      
+
     } else {
       setShowAlert(false);
 
@@ -113,7 +113,7 @@ export default function SignUp() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       {showAlert && (
         <Alert severity="warning">
-          Please check the checkbox before proceeding.
+          โปรดยอมรับข้อตกลงการใช้งานและนโยบายความเป็นส่วนตัว
         </Alert>
       )}
       <Container component="main" maxWidth="xs">
@@ -292,10 +292,10 @@ export default function SignUp() {
                 <Grid item xs={12} sm={6}>
                   <TextField
                     autoComplete=""
-                    name="thaiid"
+                    name="thai_id"
                     required
                     fullWidth
-                    id="thaiid"
+                    id="thai_id"
                     label="รหัสบัตรประชาชน"
                   />
                 </Grid>
