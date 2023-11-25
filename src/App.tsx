@@ -42,7 +42,7 @@ const App: React.FC = () => {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-<!--             <NavbarTop /> -->
+          {/* <NavbarTop /> */}
             <Navbar />
             <Routes>
               <Route path="/signup" element={<SignUpPage />} />
