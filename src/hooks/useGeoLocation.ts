@@ -4,8 +4,6 @@ const UseGeoLocation = () => {
   const [userLocation, setUserLocation] = useState({
     position: { lat: 0, lng: 0},
   });
-  const [status, setStatus] = useState(String);
-
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -17,14 +15,11 @@ const UseGeoLocation = () => {
               lng: position.coords.longitude,
             },
           });
-          setStatus("granted");
         },
         () => {
-          setStatus("denied");
         }
       );
     } else {
-      setStatus("not supported");
     }
   }, []);
 

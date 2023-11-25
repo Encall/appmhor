@@ -4,7 +4,6 @@ import { Navbar } from './components/navbar'
 import SignUpPage from './pages/signup'
 import { Home } from './pages/home'
 import { MyHealth } from './pages/myHealth'
-import { NavbarTop } from './components/navbartop'
 import { Profile } from './pages/profile'
 import Map from './pages/map'
 

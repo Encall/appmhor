@@ -15,6 +15,7 @@ import {
     CircularProgress,
     Alert,
 } from "@mui/material";
+import {LockOutlined,CheckCircleOutline} from "@mui/icons-material";
 import { MuiOtpInput } from "mui-one-time-password-input";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -123,7 +124,7 @@ export default function SignUp() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+            <LockOutlined />
           </Avatar>
           <Typography component="h1" variant="h5">
             {step === 1
@@ -192,7 +193,7 @@ export default function SignUp() {
                       </Box>
                     ) : isSent ? (
                       <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <CheckCircleOutlineIcon />
+                        <CheckCircleOutline />
                         <Box sx={{ ml: 1 }}>OTP Sent!</Box>
                       </Box>
                     ) : (
