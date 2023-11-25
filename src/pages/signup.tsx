@@ -1,27 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 import {
-    Avatar,
-    Button,
-    CssBaseline,
-    TextField,
-    FormControlLabel,
-    Checkbox,
-    Grid,
-    Box,
-    Typography,
-    Container,
-    ToggleButton,
-    ToggleButtonGroup,
-    CircularProgress,
-    Alert,
-} from "@mui/material";
-import {LockOutlined,CheckCircleOutline} from "@mui/icons-material";
-import { MuiOtpInput } from "mui-one-time-password-input";
-import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { Navigate } from "react-router-dom";
-import KeyboardIcon from "@mui/icons-material/Keyboard";
-import WebcamCapture from "../components/webcam";
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Grid,
+  Box,
+  Typography,
+  Container,
+  ToggleButton,
+  ToggleButtonGroup,
+  CircularProgress,
+  Alert,
+} from '@mui/material'
+import { LockOutlined, CheckCircleOutline } from '@mui/icons-material'
+import { MuiOtpInput } from 'mui-one-time-password-input'
+import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { useNavigate } from 'react-router-dom'
+import KeyboardIcon from '@mui/icons-material/Keyboard'
+import WebcamCapture from '../components/webcam'
+import { AxiosLib } from '../lib/Axios'
 
 export default function SignUp() {
   const navigate = useNavigate()
@@ -159,7 +160,7 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlined />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -213,7 +214,7 @@ export default function SignUp() {
                         <Box sx={{ ml: 1 }}>Resending OTP...</Box>
                       </Box>
                     ) : isSent ? (
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         <CheckCircleOutline />
                         <Box sx={{ ml: 1 }}>OTP Sent!</Box>
                       </Box>
