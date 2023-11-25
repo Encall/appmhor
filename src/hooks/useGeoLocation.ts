@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const UseGeoLocation = () => {
   const [userLocation, setUserLocation] = useState({
-    position: { lat: 0, lng: 0},
-  });
+    position: { lat: 0, lng: 0 },
+  })
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -14,16 +14,14 @@ const UseGeoLocation = () => {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             },
-          });
+          })
         },
-        () => {
-        }
-      );
-    } else {
+        () => {},
+      )
     }
-  }, []);
+  }, [])
 
-  return userLocation;
-};
+  return userLocation
+}
 
-export default UseGeoLocation;
+export default UseGeoLocation

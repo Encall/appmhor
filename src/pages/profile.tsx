@@ -90,7 +90,7 @@ export const Profile = () => {
               label="วันเดือนปีเกิด"
               fullWidth
               disabled
-              defaultValue={user.birthday.toLocaleDateString()}
+              defaultValue={user.birthday.toString()}
             />
           </div>
           <div className="my-3">
@@ -105,7 +105,7 @@ export const Profile = () => {
             />
           </div>
           <div className="my-10">
-            <Button onClick={HandleUpdate} variant="outlined" fullWidth>
+            <Button onClick={HandleUpdate} disabled variant="outlined" fullWidth>
               แก้ไขข้อมูล
             </Button>
           </div>
