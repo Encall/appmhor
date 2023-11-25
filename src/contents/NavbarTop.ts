@@ -7,7 +7,7 @@ export const NavbarTopData: NavbarTopType[] = [{
     title: 'Home',
     path: '/'
 }, {
-    title: 'My Health',
+    title: 'สุขภาพของฉัน',
     path: '/myhealth'
 }, {
     title: 'Todo',
