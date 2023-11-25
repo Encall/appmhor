@@ -10,6 +10,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { AuthContext, ContextValue, ContextType } from './contexts/context'
 import { AxiosLib } from './lib/Axios'
 import { Protect } from './lib/protect'
+import Checklist from './pages/checklist'
 
 const App: React.FC = () => {
   const [authContext, setAuthContext] = useState<ContextType>(ContextValue)
@@ -54,6 +55,7 @@ const App: React.FC = () => {
               <Route path="/myHealth" element={<MyHealth />} />
               <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />
+              <Route path="/checklist" element={<Checklist />} />
               <Route path="/" element={<Home />} />
             </Routes>
           </BrowserRouter>
