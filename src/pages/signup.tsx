@@ -84,7 +84,7 @@ export default function SignUp() {
 
       console.log(result)
       if (result.status === 201) {
-        return navigate('/home')
+        return navigate('/')
       }
     } catch (error) {
       console.log(error)
@@ -178,25 +178,25 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate sx={{ mt: 3 }}>
             {step === 1 && (
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
-                    <Typography variant="subtitle1" component="div">
-                      กรุณากรอกหมายเลขโทรศัพท์เพื่อรับ OTP
-                    </Typography>
-                    <TextField
-                      autoComplete="phone-number"
-                      onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-                        setData({ ...data, phone: e.target.value })
-                      }}
-                      name="phonenumber"
-                      required
-                      fullWidth
-                      id="phonenumber"
-                      label="เบอร์โทรศัพท์"
-                      autoFocus
-                    />
-                  </Grid>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <Typography variant="subtitle1" component="div">
+                    กรุณากรอกหมายเลขโทรศัพท์เพื่อรับ OTP
+                  </Typography>
+                  <TextField
+                    autoComplete="phone-number"
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                      setData({ ...data, phone: e.target.value })
+                    }}
+                    name="phonenumber"
+                    required
+                    fullWidth
+                    id="phonenumber"
+                    label="เบอร์โทรศัพท์"
+                    autoFocus
+                  />
                 </Grid>
+              </Grid>
             )}
             {step === 2 && (
               <Grid container spacing={2}>
