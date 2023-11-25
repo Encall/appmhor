@@ -6,13 +6,11 @@ export interface NavbarTopType {
 export const NavbarTopData: NavbarTopType[] = [
   {
     title: 'Home',
-    path: '/',
-  },
-  {
-    title: 'My Health',
-    path: '/myhealth',
-  },
-  {
+    path: '/'
+}, {
+    title: 'สุขภาพของฉัน',
+    path: '/myhealth'
+}, {
     title: 'Todo',
     path: '/todo',
   },
