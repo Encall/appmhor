@@ -1,13 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { StyledEngineProvider } from "@mui/material/styles";
 import SignUpPage from "./pages/signup";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/signup" element={<SignUpPage />} />
-      </Routes>
-    </BrowserRouter>
+    <StyledEngineProvider injectFirst>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/signup" element={<SignUpPage />} />
+        </Routes>
+      </BrowserRouter>
+    </StyledEngineProvider>
   );
 }
 
