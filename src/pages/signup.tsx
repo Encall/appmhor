@@ -4,7 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Alert from "@mui/material/Alert";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -21,6 +20,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
+import Alert from "@mui/material/Alert";
 
 import React, { useState } from "react";
 import WebcamCapture from "../components/webcam";
@@ -34,6 +34,7 @@ export default function SignUp() {
   const [shouldNavigate, setShouldNavigate] = useState(false); // [true, false
   const [checked, setChecked] = useState(false); // [true, false
   const [showAlert, setShowAlert] = useState(false); // [true, false
+  const [formValid, setFormValid] = useState(false); // [true, false
 
   const handleCheckBox = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
@@ -53,6 +54,7 @@ export default function SignUp() {
   const nextStep = () => {
     if (!checked && step === 3) {
       setShowAlert(true);
+      
     } else {
       setShowAlert(false);
 
@@ -245,7 +247,7 @@ export default function SignUp() {
                     control={
                       <Checkbox
                         required
-                        value="allowExtraEmails"
+                        value="optinprivacy"
                         color="primary"
                         onChange={handleCheckBox}
                       />
@@ -375,7 +377,7 @@ export default function SignUp() {
                   sx={{ mt: 3, mb: 2 }}
                   onClick={nextStep}
                 >
-                  Next
+                  ต่อไป
                 </Button>
                 {step >= 3 && (
                   <Button
@@ -385,7 +387,7 @@ export default function SignUp() {
                     sx={{ mt: 3, mb: 2 }}
                     onClick={prevStep}
                   >
-                    Back
+                    ย้อนกลับ
                   </Button>
                 )}
               </>

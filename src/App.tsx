@@ -9,7 +9,7 @@ import SignUpPage from "./pages/signup";
 function App() {
   const theme = createTheme({
     typography: {
-      fontFamily: ["Prompt", "Roboto"].join(","),
+      fontFamily: ["Prompt"].join(","),
     },
   });
 
