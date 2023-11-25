@@ -4,6 +4,7 @@ import { Navbar } from './components/navbar'
 import SignUpPage from './pages/signup'
 import { Home } from './pages/home'
 import { MyHealth } from './pages/myHealth'
+import { MedicalRight } from './pages/medicalRight'
 import Map from './pages/map'
 import { Profile } from './pages/profile'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -52,6 +53,7 @@ const App: React.FC = () => {
             <Navbar />
             <Routes>
               <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/medicalRight" element={<MedicalRight />} />
               <Route path="/myHealth" element={<MyHealth />} />
               <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />

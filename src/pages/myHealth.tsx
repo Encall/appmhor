@@ -28,7 +28,7 @@ export const MyHealth = () => {
             >
               <Link to="/profile">
                 <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
-                  บัญชีผู้ใช้
+                  ข้อมูลส่วนบุคคล
                 </Typography>
               </Link>
             </Box>
@@ -49,9 +49,9 @@ export const MyHealth = () => {
                 backgroundRepeat: 'no-repeat',
               }}
             >
-              <Link to="/asd">
+              <Link to="/medicalRight">
                 <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
-                  สิทธิการรักษา
+                  สิทธิการรักษาพยาบาล
                 </Typography>
               </Link>
             </Box>
@@ -74,7 +74,7 @@ export const MyHealth = () => {
             >
               <Link to="/asd">
                 <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
-                  ประวัติการรักษา
+                  ประวัติการรักษาพยาบาล
                 </Typography>
               </Link>
             </Box>
@@ -128,7 +128,7 @@ export const MyHealth = () => {
                 <Stack direction="column" spacing={0.25}>
                   <Box sx={{ paddingX: '0.5em' }}>
                     <Typography variant="h6" sx={{ fontSize: '90%' }}>
-                      นัดพบ
+                      นัดพบ{' '}
                       <Box component="span" fontWeight="fontWeightBold">
                         น.พ. กิตติพงศ์ ตาปี
                       </Box>
@@ -151,6 +151,28 @@ export const MyHealth = () => {
             </Box>
           </Stack>
         </Box>
+        <Stack direction="column" spacing={0.25}>
+          <Box sx={{ paddingX: '0.5em' }}>
+            <Typography variant="h6" sx={{ fontSize: '90%' }}>
+              นัดพบ
+              <Box component="span" fontWeight="fontWeightBold">
+                น.พ. กิตติพงศ์ ตาปี
+              </Box>
+            </Typography>
+          </Box>
+          <Stack direction="column">
+            <Box sx={{ paddingX: '0.5em' }}>
+              <Typography variant="h6" sx={{ fontSize: '90%' }}>
+                15.00 - 16.00
+              </Typography>
+            </Box>
+            <Box sx={{ paddingX: '0.5em' }}>
+              <Typography variant="h6" sx={{ fontSize: '80%' }}>
+                รพ. พระราม 2
+              </Typography>
+            </Box>
+          </Stack>
+        </Stack>
       </div>
     </div>
   )
