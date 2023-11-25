@@ -19,7 +19,7 @@ export const MyHealth = () => {
                             marginX: '1em',
                             height: '20vh',
                             width: '40vw',
-                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.9), rgba(89, 176, 255, 0.9)), url(${crowdIcon})`,
+                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.95)), url(${crowdIcon})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
                             backgroundRepeat: 'repeat',
@@ -38,7 +38,7 @@ export const MyHealth = () => {
                             marginX: '1em',
                             height: '20vh',
                             width: '40vw',
-                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.9), rgba(89, 176, 255, 0.9)), url(${medicalBenefitIcon})`,
+                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${medicalBenefitIcon})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat',
@@ -58,9 +58,9 @@ export const MyHealth = () => {
                             marginX: '1em',
                             height: '20vh',
                             width: '40vw',
-                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.9), rgba(89, 176, 255, 0.9)), url(${recordIcon})`,
+                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${recordIcon})`,
                             backgroundPosition: 'center',
-                            backgroundSize: 'contain',
+                            backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat',
 
                         }}>
@@ -78,14 +78,14 @@ export const MyHealth = () => {
                             marginX: '1em',
                             height: '20vh',
                             width: '40vw',
-                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.9), rgba(89, 176, 255, 0.9)), url(${calendarIcon})`,
-                            backgroundPosition: 'bottom',
+                            backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${calendarIcon})`,
+                            backgroundPosition: 'center',
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat',
-
                         }}>
+
                             <Link to="/asd">
-                                <Typography variant='h6' sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }} >การนัดหมาย</Typography>
+                                <Typography variant='h6' sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }} >บันทึกอาการ</Typography>
                             </Link>
                         </Box>
                     </Grid>
