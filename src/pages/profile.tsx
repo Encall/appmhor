@@ -3,8 +3,10 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import { useEffect, useState } from 'react'
 import { AxiosLib } from '../lib/Axios'
+import { useNavigate } from 'react-router-dom'
 
 export const Profile = () => {
+  const navigate = useNavigate()
   const [user, setUser] = useState<{
     email: string
     firstname: string
@@ -52,11 +54,16 @@ export const Profile = () => {
   }
 
   useEffect(() => {
-    AxiosLib.get('/api/users/me').then((res) => {
-      if (res.status === 200) {
-        setUser(res.data.data)
-      }
-    })
+    try {
+      AxiosLib.get('/api/users/me').then((res) => {
+        if (res.status === 200) {
+          setUser(res.data.data)
+        }
+      })
+    } catch (error) {
+      console.log(error)
+      navigate(0)
+    }
   }, [])
 
   return (
