@@ -19,22 +19,22 @@ export const Profile = () => {
         </CardContent>
         <CardContent>
           <div className='my-3'>
-          <TextField variant="outlined" label="เพศ" fullWidth disabled value="ชาย" />
+          <TextField variant="outlined" label="เพศ" fullWidth disabled defaultValue="ชาย" />
           </div>
           <div className='my-3'>
-          <TextField variant="outlined" label="อีเมล" fullWidth value="test@gmail.com" />
+          <TextField variant="outlined" label="อีเมล" fullWidth defaultValue="test@gmail.com" />
           </div>
           <div className='my-3'>
-          <TextField variant="outlined" label="เบอร์โทรศัพท์" fullWidth disabled value="0999999999" />
+          <TextField variant="outlined" label="เบอร์โทรศัพท์" fullWidth disabled defaultValue="0999999999" />
           </div>
           <div className='my-3'>
-          <TextField variant="outlined" label="กรุ๊ปเลือด" fullWidth value="B" />
+          <TextField variant="outlined" label="กรุ๊ปเลือด" fullWidth defaultValue="B" />
           </div>
           <div className='my-3'>
-          <TextField variant="outlined" label="วันเดือนปีเกิด" fullWidth disabled value="04/04/2547" />
+          <TextField variant="outlined" label="วันเดือนปีเกิด" fullWidth disabled defaultValue="04/04/2547" />
           </div>
           <div className='my-3'>
-          <TextField multiline variant="outlined" label="ที่อยู่" fullWidth value="23 ทกาหฟกทสฟาหก กทฟาหกหฟา าทกาฟหกทาฟ กทฟาหกทา 10150" />
+          <TextField multiline variant="outlined" label="ที่อยู่" fullWidth defaultValue="23 ทกาหฟกทสฟาหก กทฟาหกหฟา าทกาฟหกทาฟ กทฟาหกทา 10150" />
           </div>
           <div className='my-10'>
             <Button variant="outlined" fullWidth>แก้ไขข้อมูล</Button>
