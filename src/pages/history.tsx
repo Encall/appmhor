@@ -48,43 +48,51 @@ const History = () => {
   }
 
   const handleChange = (event: SelectChangeEvent) => {
-    setMonth(event.target.value as string);
-  };
+    setMonth(event.target.value as string)
+  }
 
   return (
-    <Box sx={{ maxWidth: '80vw' }} className="mx-10 mt-12">
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">ช่วงเวลา</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={month}
-          label="ช่วงเวลา"
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>เมษายน 2566</MenuItem>
-          <MenuItem value={20}>มกราคม 2566</MenuItem>
-          <MenuItem value={30}>ธันวาคม 2565</MenuItem>
-        </Select>
-      </FormControl>
-      <Stepper nonLinear activeStep={activeStep} orientation="vertical">
-        {steps.map((step, index) => (
-          <Step key={step.id}>
-            <StepButton onClick={handleStep(index)}>
-              <Box className="flex flex-col">
-                {step.label}
-                <Typography variant="caption" color="text.secondary">
-                  {step.caption}
-                </Typography>
-              </Box>
-              <StepContent>
-                <Typography>{step.description}</Typography>
-              </StepContent>
-            </StepButton>
-          </Step>
-        ))}
-      </Stepper>
-    </Box>
+    <div style={{ background: '#8EC9FF', width: '100%', height: '50vh' }}>
+      <Typography
+        variant="h5"
+        style={{ color: '#FFF', textAlign: 'center', paddingTop: '20px', paddingBottom: '16px' }}
+      >
+        สิทธิการรักษาของฉัน
+      </Typography>
+      <Box sx={{ maxWidth: '100vw', borderRadius: '50px' }} className="bg-white border pt-4 px-10">
+        <FormControl fullWidth style={{ paddingInline: '10px' }}>
+          <InputLabel id="demo-simple-select-label">ช่วงเวลา</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={month}
+            label="ช่วงเวลา"
+            onChange={handleChange}
+          >
+            <MenuItem value={10}>เมษายน 2566</MenuItem>
+            <MenuItem value={20}>มกราคม 2566</MenuItem>
+            <MenuItem value={30}>ธันวาคม 2565</MenuItem>
+          </Select>
+        </FormControl>
+        <Stepper nonLinear activeStep={activeStep} orientation="vertical">
+          {steps.map((step, index) => (
+            <Step key={step.id}>
+              <StepButton onClick={handleStep(index)}>
+                <Box className="flex flex-col">
+                  {step.label}
+                  <Typography variant="caption" color="text.secondary">
+                    {step.caption}
+                  </Typography>
+                </Box>
+                <StepContent>
+                  <Typography>{step.description}</Typography>
+                </StepContent>
+              </StepButton>
+            </Step>
+          ))}
+        </Stepper>
+      </Box>
+    </div>
   )
 }
 
