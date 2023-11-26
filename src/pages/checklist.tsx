@@ -50,7 +50,7 @@ const Checklist = () => {
   return (
     <div className="flex flex-col justify-center items-center ">
       <Box className="">
-        <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('banner.png')]">
+        <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('/bglabel1.png')]">
         {/* <Box
           className="shadow-xl mt-10 w-[80vw] h-52 rounded-xl"
           style={{ background: 'linear-gradient(90deg, #00C9FF 0%, #A4C9FB 100%)' }}
