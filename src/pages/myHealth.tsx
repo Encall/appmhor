@@ -57,7 +57,7 @@ export const MyHealth = () => {
             </Link>
           </Grid>
           <Grid item xs={6}>
-            <Link style={{textDecoration: 'none'}} to="/asd">
+            <Link style={{textDecoration: 'none'}} to="/history">
               <Box
                 sx={{
                   borderRadius: '1em',
