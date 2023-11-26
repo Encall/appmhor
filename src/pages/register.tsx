@@ -351,16 +351,20 @@ export default function register() {
                     }}
                     autoComplete=""
                     name="address"
+                    fullWidth
                     required
                     id="address"
                     label="แขวง/ตำบล"
                   />
+                </Grid>
+                <Grid item xs={12} sm={6}>
                   <TextField
                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                       setData({ ...data, district: e.target.value })
                     }}
                     autoComplete=""
                     name="address"
+                    fullWidth
                     required
                     id="address"
                     label="เขต/อำเภอ"
@@ -372,16 +376,20 @@ export default function register() {
                       setData({ ...data, province: e.target.value })
                     }}
                     autoComplete=""
+                    fullWidth
                     name="address"
                     required
                     id="address"
                     label="จังหวัด"
                   />
+                </Grid>
+                <Grid item xs={12} sm={6}>
                   <TextField
                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                       setData({ ...data, postcode: e.target.value })
                     }}
                     autoComplete=""
+                    fullWidth
                     name="address"
                     required
                     id="address"
