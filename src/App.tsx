@@ -11,6 +11,7 @@ import { AuthContext, ContextValue } from './contexts/context'
 import { AxiosLib } from './lib/Axios'
 import { Protect } from './lib/protect'
 import Checklist from './pages/checklist'
+import History from './pages/history'
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true)
@@ -60,6 +61,7 @@ const App: React.FC = () => {
               <Route path="/profile" element={<Protect children={<Profile />} />} />
               <Route path="/map" element={<Map />} />
               <Route path="/todo" element={<Checklist />} />
+              <Route path="/history" element={<History />} />
               <Route path="/" element={<Map />} />
             </Routes>
           </BrowserRouter>
