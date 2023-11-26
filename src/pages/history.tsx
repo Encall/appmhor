@@ -57,7 +57,7 @@ const History = () => {
         variant="h5"
         style={{ color: '#FFF', textAlign: 'center', paddingTop: '2.75rem', paddingBottom: '2.75rem' }}
       >
-        สิทธิการรักษาของฉัน
+        ประวัติการรักษา
       </Typography>
       <Box sx={{ maxWidth: '100vw', borderRadius: '50px' }} className="bg-white border pt-12 px-10">
         <FormControl fullWidth style={{ paddingInline: '10px', marginBottom: '1rem' }}>
