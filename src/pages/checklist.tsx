@@ -50,12 +50,12 @@ const Checklist = () => {
   return (
     <div className="flex flex-col justify-center items-center ">
       <Box className="">
-        {/* <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('bglabel1.png')]"> */}
-        <Box
+        <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('banner.png')]">
+        {/* <Box
           className="shadow-xl mt-10 w-[80vw] h-52 rounded-xl"
           style={{ background: 'linear-gradient(90deg, #00C9FF 0%, #A4C9FB 100%)' }}
-        >
-          <Typography variant="h5" component="div" color="white" className="px-5 pt-12 ">
+        > */}
+          <Typography variant="h5" component="div" color="black" className="px-5 pt-48">
             Daily Check List
           </Typography>
         </Box>
