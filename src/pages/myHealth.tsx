@@ -25,15 +25,16 @@ export const MyHealth = () => {
                     marginX: '1em',
                     height: '12em',
                     width: '12em',
-                    backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.95)), url(${crowdIcon})`,
+                    backgroundImage: `url('profile.png')`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'repeat',
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                   }}
                 >
                   <Typography
                     variant="h6"
-                    sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em', textDecoration: 'none' }}
+                    sx={{ color: 'black', paddingLeft: '1em', paddingTop: '1em', textDecoration: 'none' }}
                   >
                     ข้อมูลส่วนบุคคล
                   </Typography>
@@ -54,13 +55,14 @@ export const MyHealth = () => {
                     marginX: '1em',
                     height: '12em',
                     width: '12em',
-                    backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${medicalBenefitIcon})`,
+                    backgroundImage: `url('medicalright.png')`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                   }}
                 >
-                  <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
+                  <Typography variant="h6" sx={{ color: 'black', paddingLeft: '1em', paddingTop: '1em' }}>
                     สิทธิการรักษาพยาบาล
                   </Typography>
                 </Box>
@@ -80,13 +82,14 @@ export const MyHealth = () => {
                     marginX: '1em',
                     height: '12em',
                     width: '12em',
-                    backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${recordIcon})`,
+                    backgroundImage: `url('history.png')`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                   }}
                 >
-                  <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
+                  <Typography variant="h6" sx={{ color: 'black', paddingLeft: '1em', paddingTop: '1em' }}>
                     ประวัติการรักษาพยาบาล
                   </Typography>
                 </Box>
@@ -106,13 +109,14 @@ export const MyHealth = () => {
                     marginX: '1em',
                     height: '12em',
                     width: '12em',
-                    backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${calendarIcon})`,
+                    backgroundImage: `url('note.png')`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                   }}
                 >
-                  <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
+                  <Typography variant="h6" sx={{ color: 'black', paddingLeft: '1em', paddingTop: '1em' }}>
                     บันทึกอาการ
                   </Typography>
                 </Box>
