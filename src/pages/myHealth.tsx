@@ -1,9 +1,5 @@
 import { Box, Grid, Stack, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
-import crowdIcon from '../img/crowd.png'
-import recordIcon from '../img/icon-record.png'
-import medicalBenefitIcon from '../img/icon-medicalBenefit.png'
-import calendarIcon from '../img/icon-calendar.png'
 
 export const MyHealth = () => {
   return (
