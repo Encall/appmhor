@@ -11,96 +11,96 @@ export const MyHealth = () => {
       <div>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={6}>
-            <Box
-              sx={{
-                borderRadius: '1em',
-                display: 'flex',
-                justifyContent: 'left',
-                alignItems: 'baseline',
-                marginX: '1em',
-                height: '20vh',
-                width: '40vw',
-                backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.95)), url(${crowdIcon})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'repeat',
-              }}
-            >
-              <Link to="/profile">
-                <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
+            <Link style={{textDecoration: 'none'}} to="/profile">
+              <Box
+                sx={{
+                  borderRadius: '1em',
+                  display: 'flex',
+                  justifyContent: 'left',
+                  alignItems: 'baseline',
+                  marginX: '1em',
+                  height: '20vh',
+                  width: '40vw',
+                  backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.95)), url(${crowdIcon})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'repeat',
+                }}
+              >
+                <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em', textDecoration:'none' }}>
                   ข้อมูลส่วนบุคคล
                 </Typography>
-              </Link>
-            </Box>
+              </Box>
+            </Link>
           </Grid>
           <Grid item xs={6}>
-            <Box
-              sx={{
-                borderRadius: '1em',
-                display: 'flex',
-                justifyContent: 'left',
-                alignItems: 'baseline',
-                marginX: '1em',
-                height: '20vh',
-                width: '40vw',
-                backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${medicalBenefitIcon})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              <Link to="/medicalRight">
+            <Link style={{textDecoration: 'none'}} to="/medicalright">
+              <Box
+                sx={{
+                  borderRadius: '1em',
+                  display: 'flex',
+                  justifyContent: 'left',
+                  alignItems: 'baseline',
+                  marginX: '1em',
+                  height: '20vh',
+                  width: '40vw',
+                  backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${medicalBenefitIcon})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
                 <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
                   สิทธิการรักษาพยาบาล
                 </Typography>
-              </Link>
-            </Box>
+              </Box>
+            </Link>
           </Grid>
           <Grid item xs={6}>
-            <Box
-              sx={{
-                borderRadius: '1em',
-                display: 'flex',
-                justifyContent: 'left',
-                alignItems: 'baseline',
-                marginX: '1em',
-                height: '20vh',
-                width: '40vw',
-                backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${recordIcon})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              <Link to="/asd">
+            <Link style={{textDecoration: 'none'}} to="/asd">
+              <Box
+                sx={{
+                  borderRadius: '1em',
+                  display: 'flex',
+                  justifyContent: 'left',
+                  alignItems: 'baseline',
+                  marginX: '1em',
+                  height: '20vh',
+                  width: '40vw',
+                  backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${recordIcon})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
                 <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
                   ประวัติการรักษาพยาบาล
                 </Typography>
-              </Link>
-            </Box>
+              </Box>
+            </Link>
           </Grid>
           <Grid item xs={6}>
-            <Box
-              sx={{
-                borderRadius: '1em',
-                display: 'flex',
-                justifyContent: 'left',
-                alignItems: 'baseline',
-                marginX: '1em',
-                height: '20vh',
-                width: '40vw',
-                backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${calendarIcon})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              <Link to="/asd">
+            <Link style={{textDecoration: 'none'}} to="/asd">
+              <Box
+                sx={{
+                  borderRadius: '1em',
+                  display: 'flex',
+                  justifyContent: 'left',
+                  alignItems: 'baseline',
+                  marginX: '1em',
+                  height: '20vh',
+                  width: '40vw',
+                  backgroundImage: `linear-gradient(rgba(89, 176, 255, 0.95), rgba(89, 176, 255, 0.9)), url(${calendarIcon})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
                 <Typography variant="h6" sx={{ color: 'white', paddingLeft: '1em', paddingTop: '1em' }}>
                   บันทึกอาการ
                 </Typography>
-              </Link>
-            </Box>
+              </Box>
+            </Link>
           </Grid>
         </Grid>
       </div>
