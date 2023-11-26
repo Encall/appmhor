@@ -69,7 +69,7 @@ export const MyHealth = () => {
             <Grid item xs={6}>
               <Link
                 style={{ textDecoration: 'none', display: 'flex', justifyItems: 'center', alignItems: 'center' }}
-                to="/asd"
+                to="/history"
               >
                 <Box
                   sx={{

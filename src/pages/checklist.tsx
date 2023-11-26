@@ -50,7 +50,7 @@ const Checklist = () => {
     <div className="flex flex-col justify-center items-center ">
         <Box className="">
             {/* <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('bglabel1.png')]"> */}
-        <Box className="shadow-xl mt-10 w-[80vw] h-52 rounded-xl" style={{background: 'linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)', }}>
+        <Box className="shadow-xl mt-10 w-[80vw] h-52 rounded-xl" style={{background: 'linear-gradient(90deg, #00C9FF 0%, #A4C9FB 100%)', }}>
             <Typography variant="h5" component="div" color='white' className='px-5 pt-12 '>
                 Daily Check List
             </Typography>
@@ -69,8 +69,6 @@ const Checklist = () => {
         <AccordionDetails>
           <Box className="flex flex-col justify-center items-center">
             <Typography>Paracetamol 1 เม็ด</Typography>
-            <Typography>Paracetamol 1 เม็ด</Typography>
-            <Typography>Paracetamol 1 เม็ด</Typography>
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -80,15 +78,15 @@ const Checklist = () => {
           <Box className="flex flex-col">
             <Typography>ทานยาหลังอาหารเย็น</Typography>
             <Typography variant="body1" color="text.secondary">
-              1 เม็ด
+              3 เม็ด
             </Typography>
           </Box>
         </AccordionSummary>
         <AccordionDetails>
           <Box className="flex flex-col justify-center items-center">
             <Typography>Paracetamol 1 เม็ด</Typography>
-            <Typography>Paracetamol 1 เม็ด</Typography>
-            <Typography>Paracetamol 1 เม็ด</Typography>
+            <Typography>Vitamin C 1 เม็ด</Typography>
+            <Typography>Amoxicillin 1 เม็ด</Typography>
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -104,9 +102,7 @@ const Checklist = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Box className="flex flex-col justify-center items-center">
-            <Typography>Paracetamol 1 เม็ด</Typography>
-            <Typography>Paracetamol 1 เม็ด</Typography>
-            <Typography>Paracetamol 1 เม็ด</Typography>
+            <Typography>Xyzal (ยาแก้แพ้) 1 เม็ด</Typography>
           </Box>
         </AccordionDetails>
       </Accordion>
