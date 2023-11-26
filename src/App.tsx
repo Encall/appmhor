@@ -22,7 +22,7 @@ const App: React.FC = () => {
       const result = await AxiosLib.get('/api/users/me')
 
       if (result.status === 200) {
-        setAuthContext({ ...result.data.data, IsLogin: true })
+        setAuthContext({ ...result.data.data[0], IsLogin: true })
       }
     } catch (error) {
       setAuthContext({ ...authContext, IsLogin: false })

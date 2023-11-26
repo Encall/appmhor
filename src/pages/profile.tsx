@@ -49,7 +49,7 @@ export const Profile: React.FC = () => {
       const result = await AxiosLib.get('/api/users/me')
 
       if (result.status === 200) {
-        setUser({ ...result.data.data, IsLogin: true })
+        setUser({ ...result.data.data[0], IsLogin: true })
       }
     } catch (error) {
       navigate(0)
