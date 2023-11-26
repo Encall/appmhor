@@ -55,12 +55,12 @@ const History = () => {
     <div style={{ background: '#8EC9FF', width: '100%', height: '50vh' }}>
       <Typography
         variant="h5"
-        style={{ color: '#FFF', textAlign: 'center', paddingTop: '20px', paddingBottom: '16px' }}
+        style={{ color: '#FFF', textAlign: 'center', paddingTop: '2.75rem', paddingBottom: '2.75rem' }}
       >
         สิทธิการรักษาของฉัน
       </Typography>
-      <Box sx={{ maxWidth: '100vw', borderRadius: '50px' }} className="bg-white border pt-4 px-10">
-        <FormControl fullWidth style={{ paddingInline: '10px' }}>
+      <Box sx={{ maxWidth: '100vw', borderRadius: '50px' }} className="bg-white border pt-12 px-10">
+        <FormControl fullWidth style={{ paddingInline: '10px', marginBottom: '1rem' }}>
           <InputLabel id="demo-simple-select-label">ช่วงเวลา</InputLabel>
           <Select
             labelId="demo-simple-select-label"
