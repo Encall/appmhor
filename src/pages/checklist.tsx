@@ -4,7 +4,8 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp'
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion'
 import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
-import { Typography, Box, Checkbox } from '@mui/material'
+import { Typography, Box, Checkbox, Button } from '@mui/material'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
   ({ theme }) => ({
@@ -48,14 +49,17 @@ const Checklist = () => {
 
   return (
     <div className="flex flex-col justify-center items-center ">
-        <Box className="">
-            {/* <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('bglabel1.png')]"> */}
-        <Box className="shadow-xl mt-10 w-[80vw] h-52 rounded-xl" style={{background: 'linear-gradient(90deg, #00C9FF 0%, #A4C9FB 100%)', }}>
-            <Typography variant="h5" component="div" color='white' className='px-5 pt-12 '>
-                Daily Check List
-            </Typography>
+      <Box className="">
+        {/* <Box className="shadow-xl mt-10 w-[80vw] h-60 rounded-xl bg-cover bg-[url('bglabel1.png')]"> */}
+        <Box
+          className="shadow-xl mt-10 w-[80vw] h-52 rounded-xl"
+          style={{ background: 'linear-gradient(90deg, #00C9FF 0%, #A4C9FB 100%)' }}
+        >
+          <Typography variant="h5" component="div" color="white" className="px-5 pt-12 ">
+            Daily Check List
+          </Typography>
         </Box>
-        </Box>
+      </Box>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary className="shadow-xl" aria-controls="panel1d-content" id="panel1d-header">
           <Checkbox />
@@ -69,6 +73,13 @@ const Checklist = () => {
         <AccordionDetails>
           <Box className="flex flex-col justify-center items-center">
             <Typography>Paracetamol 1 เม็ด</Typography>
+            <Button
+              variant="contained"
+              className="bg-[#6AA6FF] rounded-lg mt-5 px-10"
+              startIcon={<SearchOutlinedIcon />}
+            >
+              ช่วยค้นหายา
+            </Button>
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -87,6 +98,13 @@ const Checklist = () => {
             <Typography>Paracetamol 1 เม็ด</Typography>
             <Typography>Vitamin C 1 เม็ด</Typography>
             <Typography>Amoxicillin 1 เม็ด</Typography>
+            <Button
+              variant="contained"
+              className="bg-[#6AA6FF] rounded-lg mt-5 px-10"
+              startIcon={<SearchOutlinedIcon />}
+            >
+              ช่วยค้นหายา
+            </Button>
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -103,6 +121,13 @@ const Checklist = () => {
         <AccordionDetails>
           <Box className="flex flex-col justify-center items-center">
             <Typography>Xyzal (ยาแก้แพ้) 1 เม็ด</Typography>
+            <Button
+              variant="contained"
+              className="bg-[#6AA6FF] rounded-lg mt-5 px-10"
+              startIcon={<SearchOutlinedIcon />}
+            >
+              ช่วยค้นหายา
+            </Button>
           </Box>
         </AccordionDetails>
       </Accordion>
