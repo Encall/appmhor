@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material/styles'
 import { Navbar } from './components/navbar'
-import SignUpPage from './pages/signup'
+import Register from './pages/register'
 import { MyHealth } from './pages/myHealth'
 import { MedicalRight } from './pages/medicalRight'
 import Map from './pages/map'
@@ -55,7 +55,7 @@ const App: React.FC = () => {
           <BrowserRouter>
             <Navbar />
             <Routes>
-              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/signup" element={<Register />} />
               <Route path="/medicalRight" element={<MedicalRight />} />
               <Route path="/myHealth" element={<MyHealth />} />
               <Route path="/profile" element={<Protect children={<Profile />} />} />

@@ -233,7 +233,7 @@ const Map = () => {
                     {loading ? (
                       <CircularProgress size="5rem" />
                     ) : success ? (
-                        <CheckCircle className="text-green-500 text-[5rem]" />
+                      <CheckCircle className="text-green-500 text-[5rem]" />
                     ) : null}
                   </Box>
                 </CardContent>
@@ -250,7 +250,9 @@ const Map = () => {
     </Box>
   ) : (
     <>
-      <div>ERROR</div>
+      <div>
+        <CircularProgress size={100} />
+      </div>
     </>
   )
 }

@@ -24,7 +24,7 @@ import KeyboardIcon from '@mui/icons-material/Keyboard'
 import WebcamCapture from '../components/webcam'
 import { AxiosLib } from '../lib/Axios'
 
-export default function SignUp() {
+export default function register() {
   const navigate = useNavigate()
   const [otp, setOtp] = useState('')
   const [step, setStep] = useState(1)
