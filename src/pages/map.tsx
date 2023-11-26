@@ -250,7 +250,7 @@ const Map = () => {
     </Box>
   ) : (
     <>
-      <div>
+      <div className='flex justify-center'>
         <CircularProgress size={100} />
       </div>
     </>
